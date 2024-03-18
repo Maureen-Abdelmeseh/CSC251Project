@@ -133,7 +133,7 @@ public class Policy
    
    public double BMICalculation()
    {
-      return  (weight * 703 ) / (height * height)
+      return  (weight * 703 ) / (height * height);
    }
    
    
@@ -155,7 +155,7 @@ public class Policy
       
       if (BMI > 35)
       {
-         additionalFee = ( BMI – 35 ) * 20;
+         additionalFee = ( BMI - 35 ) * 20;
       }
       
       return baseFee + additionalFee;
