@@ -3,6 +3,7 @@ public class Policy
    private String policyNumber;
    private String providerName;
    private PolicyHolder policyHolder;
+   private static int numPolicies = 0;
    
    /**
    No-arg constructor that explicitly initializes all fields
@@ -11,6 +12,7 @@ public class Policy
    {
       policyNumber = "";
       providerName = "";
+      numPolicies++;
    }
    
    /**
@@ -23,7 +25,8 @@ public class Policy
    {
       policyNumber = pNumber;
       providerName = pName;
-      policyHolder = pHolder;
+      policyHolder = new PolicyHolder(pHolder);
+      numPolicies++;
    }
    
    //getters//
@@ -50,7 +53,11 @@ public class Policy
    {
       return policyHolder;
    }
-
+   
+   public static int getNumPolicies() 
+   {
+      return numPolicies;
+   }
    
       
    //setters//

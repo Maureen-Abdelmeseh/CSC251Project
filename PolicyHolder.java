@@ -37,6 +37,17 @@ class PolicyHolder
       weight = w;
    }
    
+   // copy constructor
+   public PolicyHolder(PolicyHolder obj)
+   {
+      firstName = obj.firstName;
+      lastName = obj.lastName;
+      age = obj.age;
+      smokingStatus = obj.smokingStatus;
+      height = obj.height;
+      weight = obj.weight;
+   }
+   
     //getters//
    /**
    @return The Policyholder's first name
