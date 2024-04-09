@@ -90,7 +90,7 @@ public class Policy
       double weight = policyHolder.getWeight();
       double height = policyHolder.getHeight();
       
-      return (weight * CONVFACTOR) / (height * height);
+      return Double.parseDouble(String.format("%.2f", (weight * CONVFACTOR) / (height * height)));
    }
    
    /**
@@ -117,11 +117,22 @@ public class Policy
          
       if(smokingStatus.equalsIgnoreCase("smoker"))
          price += ADDITIONAL_FEE_SMOKING;
-      
+         
+      double bmi = Double.parseDouble(String.format("%.2f", getBMI()));
       if(getBMI() > BMI_THRESHOLD)
          price += ((getBMI() - BMI_THRESHOLD) * ADDITIONAL_FEE_PER_BMI);
          
-      return price;
+      return Double.parseDouble(String.format("%.2f", price));
+   }
+   
+   
+   public String toString() 
+   {
+      return "Policy Number: " + policyNumber + "\n" +
+             "Provider Name: " + providerName + "\n" +
+              policyHolder.toString() + "\n" +
+             "Policyholder's BMI: " + getBMI() + "\n" +
+             "Policy Price: " + getPrice();
    }
 
    //Not included in the instructions but can be added...
